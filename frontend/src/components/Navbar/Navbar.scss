@@ -5,6 +5,8 @@ nav{
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
+      overflow: hidden;
       
       a{
             transition: all .4s ease;
@@ -27,6 +29,7 @@ nav{
                   display : flex;
                   gap : 10px;
                   align-items: center;
+                  gap: 10px
                   img{
                         width: 28px;
                   }
@@ -44,7 +47,7 @@ nav{
       .right{
             flex: 2 ;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: flex-end;
             background-color: #fcf5f3;
             height: 100%;
@@ -54,7 +57,7 @@ nav{
             }
             a{
                   padding: 12px 24px;
-                  margin : 24px;
+                  margin : 20px;
 
             }
             .user{
@@ -113,19 +116,20 @@ nav{
                   
             }
             .menu{
-                  position: absolute;
+                  position: fixed;
                   top: 0;
-                  right: -50%;
+                  right: -100%;
                   background-color: black;
-                  color : white;
+                  color: white;
                   height: 100vh;
                   width: 50%;
-                  transition: all 1s ease;
+                  transition: all 0.5s ease;
                   display: flex;
                   flex-direction: column;
                   align-items: center;
                   justify-content: center;
                   font-size: 24px;
+                  z-index: 999;
                   
                   &.active{
                         right: 0;
@@ -133,7 +137,6 @@ nav{
                   @include sm{
                         a{
                               display: initial;
-                              
                         }
                   }
             }

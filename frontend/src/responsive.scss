@@ -1,6 +1,8 @@
 
-@mixin lg{
-      @media(max-width: 1366px){
+
+
+@mixin sm{
+      @media(max-width: 738px){
             @content;
       }
 }
@@ -9,8 +11,8 @@
             @content;
       }
 }
-@mixin sm{
-      @media(max-width: 640px){
+@mixin lg{
+      @media(max-width: 1366px){
             @content;
       }
 }
