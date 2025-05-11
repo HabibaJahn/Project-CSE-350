@@ -54,11 +54,15 @@
                   @include md{
                         width: auto;
                         &:nth-child(2),&:nth-child(3){
-                              width: auto;
+                              width: 200px;
                         }
                   }
                   @include sm{
+                        width: auto;
                         padding: 20px;
+                        &:nth-child(2),&:nth-child(3){
+                              width: auto;
+                        }
                         border: 1px solid #999;
                   }
             }
