@@ -1,7 +1,7 @@
 export const listData = [
       {
         id: 1,
-        title: "A Great Apartment Next to the Beach!",
+        title: "Apartment 1",
         images: ["https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
         bedroom: 2,
         bathroom: 1,
@@ -12,7 +12,7 @@ export const listData = [
       },
       {
         id: 2,
-        title: "An Awesome Apartment Near the Park! Almost too good to be true!",
+        title: "Apartment 2",
         images: ["https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
         bedroom: 3,
         bathroom: 2,
@@ -23,7 +23,7 @@ export const listData = [
       },
       {
         id: 3,
-        title: "A New Apartment in the City!",
+        title: "Apartment 3",
         images: ["https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
         bedroom: 1,
         bathroom: 1,
@@ -34,7 +34,7 @@ export const listData = [
       },
       {
         id: 4,
-        title: "Great Location! Great Price! Great Apartment!",
+        title: "Apartment 4",
         images: ["https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
         bedroom: 2,
         bathroom: 1,
