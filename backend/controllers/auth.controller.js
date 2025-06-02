@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import prisma from "../lib/prisma.js";
 
 export const register = async (req,res) => {
@@ -35,9 +36,19 @@ export const login = async (req,res) => {
 
             res.setHeader("Set-Cookie","test" + "myValue")
             // res.status(200).json({ message: "Login successful" });
-            res.cookie("text2","myValue2",{
+
+            const age = 1000*60*60*7*24;
+
+            const token = jwt.sign({
+                        id: user.id,
+            },process.env.JWT_SECRET_KEY,
+            { expiresIn: age }
+      )
+
+            res.cookie("token",token, {
                   httpOnly: true,
                   // secure: true
+                  maxAge: age,
             })
             .status(200)
             .json({message: "Login Successfull"})
@@ -48,5 +59,5 @@ export const login = async (req,res) => {
       }
 };
 export const logout = (req,res) => {
-
+      res.clearCookie("token").status(200).json({message: "Logout Successfull!"})
 };
