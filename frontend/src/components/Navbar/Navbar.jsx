@@ -1,60 +1,57 @@
-import "./Navbar.scss";
-import logo from "../../assets/logo.png";
-import menuicon from "../../assets/menuicon.png";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from 'react';
+import './Navbar.scss';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
-function Navbar (){
-    const [open , setOpen] = useState(false)
+function Navbar() {
+  const [open, setOpen] = useState(false);
+  const { currentUser } = useContext(AuthContext);
 
-    const user = true;
+  return (
+    <nav>
+      <div className="left">
+        <Link to="/" className="logo">
+          <img src="/logo.png" alt="" />
+          <span>HomeHunt</span>
+        </Link>
+        <a href="/">Home</a>
+        <a href="/">About</a>
+        <a href="/">Contact</a>
+        <a href="/">Agents</a>
+      </div>
 
-    return (
-        <nav>
-            <div className='left'>
-                <a href="" className="logo">
-                    <img src={logo} alt=""/>
-                    <span>Lodgify</span>
-                </a>
-                <a href="">Home</a>
-                <a href="">About</a>
-                <a href="">Contact</a>
-                <a href="">Agents</a>
-            </div>
-            <div className='right'>
+      <div className="right">
+        {currentUser && currentUser.username ? (
+          <div className="user">
+            <img src={currentUser.avatar || "/noavatar.png"} alt="" />
+            <span>{currentUser.username}</span>
+            <Link to="/profile" className="profile">
+              <div className="notification">3</div>
+              <span>Profile</span>
+            </Link>
+          </div>
+        ) : (
+          <>
+            <a href="/login">Sign In</a>
+            <a href="/register" className="register">Sign Up</a>
+          </>
+        )}
 
-                {user? (<div className="user">
-                    <img src = "/user.jpg" alt = ""/>
-                    <span>Jannatun Nayma</span>
-                    <Link to = "/profile" className="profile">
-                        <div className="notification">3</div>
-                        <span>Profile</span>
-                    </Link>
-                </div>) : (
-                    <>
-                    <a href="">Sign in</a>
-                    <a href="" className="register">Sign up</a>
-                    </>
-                )}
+        <div className="menuIcon">
+          <img src="/menu.png" alt="" onClick={() => setOpen(!open)} />
+        </div>
 
-                <div className="menuicon">
-                    <img 
-                        src = {menuicon} 
-                        alt = "" 
-                        onClick={()=>setOpen((prev)=>!prev)}
-                    />
-                </div>
-                <div className={open ? "menu active" : "menu"}>
-                    <a href="">Home</a>
-                    <a href="">About</a>
-                    <a href="">Contact</a>
-                    <a href="">Agents</a>
-                    <a href="">Sign in</a>
-                    <a href="">Sign up</a>
-                </div>
-            </div>
-        </nav>
-    );
+        <div className={open ? "menu active" : "menu"}>
+          <a href="/">Home</a>
+          <a href="/">About</a>
+          <a href="/">Contact</a>
+          <a href="/">Agents</a>
+          <a href="/login">Sign In</a>
+          <a href="/register">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

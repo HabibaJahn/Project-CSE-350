@@ -1,4 +1,4 @@
-import "./Searchbar.scss";
+import "./searchBar.scss";
 import searchicon from "../../assets/icons8-search-48.png";
 import { useState } from 'react';
 
@@ -19,8 +19,8 @@ function Searchbar () {
     }
 
     return (
-        <div className='searchbar'>
-            <div className='type'>
+        <div className="searchBar">
+            <div className="type">
                 {types.map((type) =>(
                     <button key = {type} onClick={()=>switchType(type)} className={query.type=== type ? "active": ""}>{type}</button>
                 ))}
@@ -35,6 +35,6 @@ function Searchbar () {
             </form>
         </div>
     );
-};
+}
 
 export default Searchbar;
