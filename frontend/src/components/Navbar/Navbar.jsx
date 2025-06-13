@@ -37,18 +37,18 @@ function Navbar() {
           </>
         )}
 
-        <div className="menuIcon">
+        {/* <div className="menuIcon">
           <img src="/menu.png" alt="" onClick={() => setOpen(!open)} />
-        </div>
+        </div> */}
 
-        <div className={open ? "menu active" : "menu"}>
+        {/* <div className={open ? "menu active" : "menu"}>
           <a href="/">Home</a>
           <a href="/">About</a>
           <a href="/">Contact</a>
           <a href="/">Agents</a>
           <a href="/login">Sign In</a>
           <a href="/register">Sign Up</a>
-        </div>
+        </div> */}
       </div>
     </nav>
   );
