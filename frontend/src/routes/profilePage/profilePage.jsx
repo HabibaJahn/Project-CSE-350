@@ -8,7 +8,8 @@ import { AuthContext } from './../../context/AuthContext';
 
 function profilePage(){
       const {updateUser,currentUser} = useContext(AuthContext);
-      const navigate = useNavigate()
+      const navigate = useNavigate();
+  
 
       const handleLogout = async() =>{
             try{
@@ -26,7 +27,10 @@ function profilePage(){
                         <div className="wrapper">
                               <div className="title">
                                     <h1>User Information</h1>
-                                    <button>Update Profile</button>
+                                    <Link to = "/profile/update">
+                                          <button>Update Profile</button>
+                                    </Link>
+                                    
                               </div>
                               <div className="info">
                                     <span> Avatar: <img src ={currentUser.avatar || "noavatar.png"} alt="" /> </span>
@@ -51,6 +55,7 @@ function profilePage(){
                         </div>
                   </div>
             </div>
+           
       )
 }
 export default profilePage;
