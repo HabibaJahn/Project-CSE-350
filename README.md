@@ -48,7 +48,7 @@ A full-stack web application that allows users to list, search, rent, or buy apa
 ### Prerequisites
 - Node.js
 - MongoDB
-- npm or yarn
+- npm 
 
 ---
 
